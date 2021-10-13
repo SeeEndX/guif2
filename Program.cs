@@ -9,10 +9,6 @@ namespace guif2
     static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-
         public class logic
         {
             public static int firstcond(double A, double B)
@@ -57,7 +53,7 @@ namespace guif2
                 return a;
             }
         }
-        class Program
+        class Program1
         {
             static void Main(string[] args)
             {
@@ -80,6 +76,10 @@ namespace guif2
                                                                             //Конец логики
             }
         }
+        /// </summary>
+        [STAThread]
+
+        
         static void Main()
         {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
