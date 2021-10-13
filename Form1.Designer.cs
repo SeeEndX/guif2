@@ -100,6 +100,7 @@ namespace guif2
             this.Task.TabIndex = 6;
             this.Task.Text = "Задание";
             this.Task.UseVisualStyleBackColor = true;
+            this.Task.Click += new System.EventHandler(this.Task_Click);
             // 
             // Count
             // 
@@ -114,13 +115,14 @@ namespace guif2
             // 
             // Clear
             // 
-            this.Clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Clear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Clear.Location = new System.Drawing.Point(313, 117);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(123, 39);
             this.Clear.TabIndex = 8;
-            this.Clear.Text = "Очистить";
+            this.Clear.Text = "Очистить всё";
             this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Form1
             // 
@@ -136,6 +138,7 @@ namespace guif2
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SumA);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Form1";
             this.Text = "Вклады";
             this.ResumeLayout(false);

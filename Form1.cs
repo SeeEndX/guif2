@@ -15,7 +15,6 @@ namespace guif2
         public Form1()
         {
             InitializeComponent();
-            SumA.Text = Properties.Settings.Default.SumA;
         }
 
         public class Logic
@@ -34,7 +33,6 @@ namespace guif2
                     if (A2 > B) i = 1000;
                 }
                 string result1 = "За "+month1+"й мес. величина ежемесячного увеличения вклада превысит "+B+" руб";
-                //MessageBox.Show(result1);
                 return result1;
             }
             public static string secondcond(double A, double C)
@@ -50,7 +48,6 @@ namespace guif2
                     }
                 }
                 string result2 = "Через " + month2 + " мес. размер вклада превысит " + C + " руб";
-               // MessageBox.Show(result2);
                 return result2;
             }
             public static int correctinput(double A, double B, double C)
@@ -69,12 +66,25 @@ namespace guif2
             double C = double.Parse(this.SumC.Text);
             if (Logic.correctinput(A, B, C) == 1)
             {
-                //Logic.firstcond(A, B);
-                //Logic.secondcond(A, C);
                 string result = Logic.firstcond(A, B) + "\n" + Logic.secondcond(A, C);
                 MessageBox.Show(result);
             }
             else MessageBox.Show("Неверные исходные данные!");
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            this.SumA.Text = "";
+            this.SumB.Text = "";
+            this.SumC.Text = "";
+        }
+
+        private void Task_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Гражданин 1 марта открыл счет в банке, вложив A руб.\n" +
+                "Через каждый месяц размер вклада увеличивается на 2% от имеющейся суммы.\n" +
+                "Определить:\n а) за какой месяц величина ежемесячного увеличения вклада превысит B руб.;\n" +
+                " б) через сколько месяцев размер вклада превысит C руб");
         }
     }
 }
