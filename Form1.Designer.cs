@@ -110,6 +110,7 @@ namespace guif2
             this.Count.TabIndex = 7;
             this.Count.Text = "Рассчитать";
             this.Count.UseVisualStyleBackColor = true;
+            this.Count.Click += new System.EventHandler(this.Count_Click);
             // 
             // Clear
             // 
