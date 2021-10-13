@@ -15,6 +15,9 @@ namespace guif2
         public Form1()
         {
             InitializeComponent();
+            SumA.Text = Properties.Settings.Default.SumA;
+            SumB.Text = Properties.Settings.Default.SumB;
+            SumC.Text = Properties.Settings.Default.SumC;
         }
 
         public class Logic
@@ -66,10 +69,14 @@ namespace guif2
             double C = double.Parse(this.SumC.Text);
             if (Logic.correctinput(A, B, C) == 1)
             {
-                string result = Logic.firstcond(A, B) + "\n" + Logic.secondcond(A, C);
+                string result = Logic.firstcond(A, B) + "\n\n" + Logic.secondcond(A, C);
                 MessageBox.Show(result);
             }
             else MessageBox.Show("Неверные исходные данные!");
+            Properties.Settings.Default.SumA = this.SumA.Text;
+            Properties.Settings.Default.SumB = this.SumB.Text;
+            Properties.Settings.Default.SumC = this.SumC.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -85,6 +92,10 @@ namespace guif2
                 "Через каждый месяц размер вклада увеличивается на 2% от имеющейся суммы.\n" +
                 "Определить:\n а) за какой месяц величина ежемесячного увеличения вклада превысит B руб.;\n" +
                 " б) через сколько месяцев размер вклада превысит C руб");
+            Properties.Settings.Default.SumA = this.SumA.Text;
+            Properties.Settings.Default.SumB = this.SumB.Text;
+            Properties.Settings.Default.SumC = this.SumC.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }
