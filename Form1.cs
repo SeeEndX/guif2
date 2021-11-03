@@ -19,7 +19,20 @@ namespace guif2
             SumA.Text = Properties.Settings.Default.SumA;
             SumB.Text = Properties.Settings.Default.SumB;
             comboBox1.Text = "Сумма увеличения вклада (B)";
+
+            // для ENTERа
+            this.KeyPreview = true;
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+          //this.Count.Click += new System.EventHandler(this.Count_Click); в гайде было, без нее работает
+            // для ENTERа
         }
+
+        // для ENTERа
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) Count.PerformClick();
+        }
+        // для ENTERа
 
         private void Clear_Click(object sender, EventArgs e)
         {
