@@ -36,8 +36,7 @@ namespace guif2
             this.Task = new System.Windows.Forms.Button();
             this.Count = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -76,10 +75,10 @@ namespace guif2
             // 
             // Task
             // 
-            this.Task.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Task.Location = new System.Drawing.Point(12, 248);
+            this.Task.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Task.Location = new System.Drawing.Point(41, 235);
             this.Task.Name = "Task";
-            this.Task.Size = new System.Drawing.Size(65, 26);
+            this.Task.Size = new System.Drawing.Size(123, 39);
             this.Task.TabIndex = 6;
             this.Task.Text = "Задание";
             this.Task.UseVisualStyleBackColor = true;
@@ -88,17 +87,18 @@ namespace guif2
             // Count
             // 
             this.Count.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Count.Location = new System.Drawing.Point(148, 235);
+            this.Count.Location = new System.Drawing.Point(243, 233);
             this.Count.Name = "Count";
             this.Count.Size = new System.Drawing.Size(123, 39);
             this.Count.TabIndex = 7;
             this.Count.Text = "Рассчитать";
             this.Count.UseVisualStyleBackColor = true;
+            this.Count.Click += new System.EventHandler(this.Count_Click);
             // 
             // Clear
             // 
             this.Clear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Clear.Location = new System.Drawing.Point(309, 235);
+            this.Clear.Location = new System.Drawing.Point(450, 233);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(123, 39);
             this.Clear.TabIndex = 8;
@@ -106,35 +106,23 @@ namespace guif2
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
-            // radioButton1
+            // comboBox1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(309, 106);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(236, 24);
-            this.radioButton1.TabIndex = 9;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Сумма увеличения вклада (B)";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(309, 145);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(252, 24);
-            this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Сумма увеличенного вклада (С)";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Сумма увеличения вклада (B)",
+            "Сумма увеличенного вклада (C)"});
+            this.comboBox1.Location = new System.Drawing.Point(292, 124);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(254, 28);
+            this.comboBox1.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 309);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(612, 309);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.Count);
             this.Controls.Add(this.Task);
@@ -159,8 +147,7 @@ namespace guif2
         private System.Windows.Forms.Button Task;
         private System.Windows.Forms.Button Count;
         private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
