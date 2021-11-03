@@ -18,10 +18,14 @@ namespace guif2
             InitializeComponent();
             SumA.Text = Properties.Settings.Default.SumA;
             SumB.Text = Properties.Settings.Default.SumB;
+            comboBox1.Text = "Сумма увеличения вклада (B)";
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            this.SumA.Text = "";
+            this.SumB.Text = "";
+            this.comboBox1.Text = "";
             Properties.Settings.Default.SumA = this.SumA.Text;
             Properties.Settings.Default.SumB = this.SumB.Text;
             Properties.Settings.Default.Save();
@@ -34,6 +38,24 @@ namespace guif2
                 "Через каждый месяц размер вклада увеличивается на 2% от имеющейся суммы.\n" +
                 "Определить:\n а) за какой месяц величина ежемесячного увеличения вклада превысит B руб.;\n" +
                  "б) через сколько месяцев размер вклада превысит C руб");
+            Properties.Settings.Default.SumA = this.SumA.Text;
+            Properties.Settings.Default.SumB = this.SumB.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void Count_Click(object sender, EventArgs e)
+        {
+            double A = double.Parse(this.SumA.Text);
+            double B = double.Parse(this.SumB.Text);
+            switch (comboBox1.Text)
+            {
+                case "Сумма увеличения вклада (B)":
+                    MessageBox.Show("За " + Logic.firstcond(A, B) + "й мес.величина ежемесячного увеличения вклада превысит " + B + " руб");
+                    break;
+                case "Сумма увеличенного вклада (C)":
+                    MessageBox.Show("Через " + Logic.secondcond(A, B) + "мес.размер вклада превысит " + B + " руб");
+                    break;
+            }
             Properties.Settings.Default.SumA = this.SumA.Text;
             Properties.Settings.Default.SumB = this.SumB.Text;
             Properties.Settings.Default.Save();
@@ -80,19 +102,5 @@ namespace guif2
             }
         }
 
-        private void Count_Click(object sender, EventArgs e)
-        {
-            double A = double.Parse(this.SumA.Text);
-            double B = double.Parse(this.SumB.Text);
-            switch (comboBox1.Text)
-            {
-                case "Сумма увеличения вклада (B)":
-                    MessageBox.Show("За "+ Logic.firstcond(A, B) + "й мес.величина ежемесячного увеличения вклада превысит "+ B +" руб");
-                    break;
-                case "Сумма увеличенного вклада (C)":
-                    MessageBox.Show("Через "+Logic.secondcond(A, B) + "мес.размер вклада превысит " + B + " руб");
-                    break;
-            }
-        }
     }
 }
