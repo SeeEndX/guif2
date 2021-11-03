@@ -94,7 +94,6 @@ namespace guif2
             this.Count.TabIndex = 7;
             this.Count.Text = "Рассчитать";
             this.Count.UseVisualStyleBackColor = true;
-            this.Count.Click += new System.EventHandler(this.Count_Click);
             // 
             // Clear
             // 
@@ -117,7 +116,6 @@ namespace guif2
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Сумма увеличения вклада (B)";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -129,7 +127,6 @@ namespace guif2
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Сумма увеличенного вклада (С)";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // Form1
             // 
